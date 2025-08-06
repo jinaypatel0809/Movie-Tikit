@@ -9,6 +9,8 @@ import Favorite from './pages/Favorite';
 import Navbar from './components/Navbar';
 import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer';
+import BookNow from './components/BookNow';
+import { Layout } from 'lucide-react';
 
 const App = () => {
 
@@ -24,6 +26,11 @@ const App = () => {
         <Route path='/movies/:id/:date' element={<SeatLayout/>} />
         <Route path='/my-bookings' element={<MyBookings/>} />
         <Route path='/favorite' element={<Favorite/>} />
+        <Route path='/booknow/:id/:date' element={<BookNow/>}/>
+        <Route path='/admin/*' element={<Layout/>}>
+        
+
+        </Route>
       </Routes>
       {!isAdminRoute && <Footer/>}
 
