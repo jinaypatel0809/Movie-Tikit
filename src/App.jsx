@@ -10,7 +10,12 @@ import Navbar from './components/Navbar';
 import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer';
 import BookNow from './components/BookNow';
-import { Layout } from 'lucide-react';
+import Dashboard from './pages/admin/Dashboard';
+import Layout from './pages/admin/Layout';
+import ListShows from './pages/admin/ListShows';
+import ListBookings from './pages/admin/ListBookings';
+import AddShows from './pages/admin/AddShows';
+
 
 const App = () => {
 
@@ -28,8 +33,10 @@ const App = () => {
         <Route path='/favorite' element={<Favorite/>} />
         <Route path='/booknow/:id/:date' element={<BookNow/>}/>
         <Route path='/admin/*' element={<Layout/>}>
-        
-
+        <Route index element={<Dashboard/>}/>
+        <Route path='add-shows' element={<AddShows/>}/>
+        <Route path='list-shows' element={<ListShows/>}/>
+        <Route path='list-bookings' element={<ListBookings/>}/>
         </Route>
       </Routes>
       {!isAdminRoute && <Footer/>}
